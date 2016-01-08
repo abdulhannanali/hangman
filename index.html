@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hangman!</title>
+    <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css">
+    <link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m8">
+          <h1 class="hangStyle">Hangman!</h1>
+          <h3 class="red-text hangStyle">cos solving puzzles at the time of death penalty is too mainstream</h3>
+        </div>
+        <div class="col s12 m4">
+          <img src="assets/hangman.jpg" alt="hangman"/>
+        </div>
+      </div>
+      <div class="row left lives">
+        <span class="black-text">
+          <h3 class="hangStyle">lives: <span id="lives" class="red-text"><i class="material-icons">favorite</i></span></h3>
+        </span>
+      </div>
+      <div class="row select-category">
+        <div class="col s12">
+          <div class="card-panel red hangStyle">
+            <h4>Select a category... You play with it or it plays with your life ;(</h4>
+            <div class="row center">
+              <div class="input-field">
+                <select id="selectBox">
+                </select>
+                <label>Select Category!</label>
+              </div>
+              <a id="startButton" class="btn btn-lg black waves-effect waves-light">Let's hang!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio src="assets/adventure.mp3" id="adventure music" autoplay="" loop></audio>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
