@@ -192,6 +192,10 @@
       startGame($("#selectBox").val())
     })
 
+    $("#tryagainbutton").click(function (el) {
+      resetGame()
+    })
+
     $("#resetcontrol").click(function (el) {
       resetGame()
     })
