@@ -14,36 +14,43 @@
       <div class="row">
         <div class="row">
           <!-- volume control -->
-          <h3><i id="sounddisplay" class="material-icons">volume_up</i></h3>
+          <div class="col s6">
+            <h3><i id="sounddisplay" class="material-icons">volume_up</i> <i id="resetcontrol" class="material-icons blue-text">autorenew</i></h3>
+          </div>
+          <div class="col s6">
+            <div class="right repoText">
+              <h6>Made with <i class="material-icons red-text animated pulse infinite">favorite</i>  by Hannan Ali as a task in <a href="https://codein.withgoogle.com">Google CodeIn</a> with <a href="https://fossasia.org">FOSSASIA</a>. Visit FOSSASIA <a href="https://fossasia.org">here</a>. Also, Don't forget to <i class="material-icons yellow-text animated pulse infinite">star</i> the repo and contribute <a href="https://github.com/abdulhannanali/hangman">here</a></h6>
+            </div>
+          </div>
         </div>
-        <div class="col s12 m8">
+        <div class="col s12 m8 animated zoomIn">
           <h1 class="hangStyle">Hangman!</h1>
           <h3 class="red-text hangStyle">cos solving puzzles at the time of death penalty is too mainstream</h3>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m4 animated rollIn">
           <img src="assets/hangman.jpg" alt="hangman"/>
         </div>
       </div>
-      <div class="row select-category categoryscene">
+      <div class="row select-category categoryscene animated fadeIn">
         <div class="col s12">
-          <div class="card-panel red hangStyle">
-            <h4>Select a category... You play with it or it plays with your life ;(</h4>
+          <div class="card-panel red">
+            <h4 class="hangStyle">Select a category... You play with it or it plays with your life ;(</h4>
             <div class="row center">
               <div class="input-field">
                 <select id="selectBox">
                 </select>
                 <label>Select Category!</label>
               </div>
-              <a id="startButton" class="btn btn-lg black waves-effect waves-light">Let's hang!</a>
+              <a id="startButton" class="btn btn-lg black waves-effect waves-light hangStyle"><b>Let's Test You out!</b></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="playscene">
+      <div class="playscene animated lightSpeedIn">
         <div class="row lives">
           <div class="col s12">
             <div class="card-panel cyan lighten-4">
-              <h5 class="hangStyle">lives: <span id="livesHearts" class="red-text"></span></h5>
+              <h5 class="hangStyle">lives: <span id="livesHearts" class="animated wobble red-text"></span></h5>
             </div>
           </div>
         </div>
@@ -56,6 +63,18 @@
           </div>
         </div>
       </div>
+      <div class="finalscene animated flipInX">
+        <div class="col s12">
+          <div class="card-panel center">
+            <h4 id="finalMessage"></h4>
+            <img id="finalImage" src="" alt="Final Image at the end of the game!" />
+            <br/>
+            <br/>
+            <br/>
+            <a id="tryagainbutton" class="btn waves-effect waves-light yellow black-text">Try Again <i class="material-icons right">autorenew</i></a>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -63,6 +82,6 @@
 
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="bundle.min.js"></script>
   </body>
 </html>
