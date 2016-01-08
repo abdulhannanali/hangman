@@ -16,7 +16,7 @@
       "OKAY",
       "IIGHT",
       "FOOTY"
-    ]
+    ],
     "countries": [
       "India",
       "Zimbabwe",
