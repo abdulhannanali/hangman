@@ -8,12 +8,27 @@
       "Caterpillar",
       "Badger"
     ],
+    "internet slangs": [
+      "LMAO",
+      "ROFL",
+      "WWWY",
+      "SHIZZLE",
+      "OKAY",
+      "IIGHT",
+      "FOOTY"
+    ]
     "countries": [
       "India",
       "Zimbabwe",
       "Russia",
       "Puerto Rico",
-      "Chile"
+      "Chile",
+      "China",
+      "United Arab Emirates",
+      "Afghanistan",
+      "Uruguay",
+      "Estonia",
+      "Luxembourg"
     ],
     "apps": [
       "snapchat",
@@ -32,8 +47,34 @@
     ]
   }
 
+  // listens to keyboard for any keypress
+  function listenKeyboardLetters(cb) {
+    // listening forr keys all over the document for now
+    var element = $(document)
+    return element.on("keypress", function (event) {
+      var key =   String.fromCharCode(event.charCode)
+      if (key.search(/[a-zA-Z]/) != -1) {
+        cb(key)
+      }
+    })
+  }
+
+
+  // unlistens the keyboard for the keypresses
+  function unListenKeyboard(element) {
+    if (!element) {
+      var element = $(document)
+    }
+    element.off("keypress")
+  }
+
+
   // starts the game according to the category
   function startGame(category) {
+    $(".categoryscene").hide()
+    $(".lives").show()
+    $(".playscene").show()
+
     // displays the remaining lives in the DOM
     function displayLives(numLives) {
       var lives = $("#livesHearts")
@@ -44,7 +85,6 @@
       }
     }
 
-    $(".categoryscene").hide()
     if (!category) {
       throw new Error("Category not given")
     }
@@ -86,11 +126,44 @@
 
     // in case if the game is won
     function gameWin() {
+      puzzleEnd(true)
     }
 
     // in case of losing the game
     function gameOver() {
-      alert("Game over for now!")
+      puzzleEnd(false)
+    }
+
+    function puzzleEnd(win) {
+      $(".categoryscene").hide()
+      $(".playscene").hide()
+      unListenKeyboard()
+
+      var finalMessage = $("#finalMessage")
+
+      var image;
+      var images = {
+        gameOverImages: [
+          "gameover1.gif",
+          "gameover2.gif"
+        ],
+        youWinImages: [
+          "youwin.gif"
+        ]
+      }
+
+      if (win) {
+        image = images.youWinImages[Math.floor(Math.random() * images.youWinImages.length)]
+        finalMessage.attr("class", "green-text hangStyle")
+        finalMessage.html("You Won! Now go to <a href='https://fossasia.org'>FOSSASIA.org</a>")
+      } else {
+        finalMessage.attr("class", "red-text hangStyle")
+        finalMessage.html("Did you really go to school?")
+        image = images.gameOverImages[Math.floor(Math.random() * images.gameOverImages.length)]
+      }
+
+      $("#finalImage").attr("src", "assets/"+image)
+      $(".finalscene").show()
     }
 
     function displayWord (wordArray) {
@@ -103,39 +176,12 @@
     return word.replace(/[aeiou]/g, "_")
   }
 
-  // listens to keyboard for any keypress
-  function listenKeyboardLetters(cb) {
-    // listening forr keys all over the document for now
-    var element = $(document)
-    element.on("keypress", function (event) {
-      var key =   String.fromCharCode(event.charCode)
-      if (key.search(/[a-zA-Z]/) != -1) {
-        cb(key)
-      }
-    })
-  }
-
-
-  // unlistens the keyboard for the keypresses
-  function unListenKeyboard(element) {
-
-  }
-
-  function voWels(word) {
-    return word.split("").map(function (letter) {
-      if (letter.match(/[aeiou]/i)) {
-        word.split("_")
-      }
-      else {
-        return
-      }
-    })
-  }
 
   // initializing the plugins here
   $(document).ready(function () {
     // $(".lives").hide()
     handleSoundControl()
+    resetGame()
     var wordsProps = Object.getOwnPropertyNames(words)
     wordsProps.forEach(function (value) {
       $("#selectBox").append($("<option value='" + value + "'>" + value + "</option>"))
@@ -145,13 +191,19 @@
     $("#startButton").on("click", function (el) {
       startGame($("#selectBox").val())
     })
+
+    $("#resetcontrol").click(function (el) {
+      resetGame()
+    })
   })
 
 
   function resetGame () {
     $(".lives").hide()
-    $(".select-category").show()
-
+    $(".playscene").hide()
+    $(".finalscene").hide()
+    unListenKeyboard()
+    $(".categoryscene").show()
   }
 
 
