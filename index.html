@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css">
     <link href='//fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="container">
       <div class="row">
+        <div class="row">
+          <!-- volume control -->
+          <h3><i id="sounddisplay" class="material-icons">volume_up</i></h3>
+        </div>
         <div class="col s12 m8">
           <h1 class="hangStyle">Hangman!</h1>
           <h3 class="red-text hangStyle">cos solving puzzles at the time of death penalty is too mainstream</h3>
@@ -19,12 +24,7 @@
           <img src="assets/hangman.jpg" alt="hangman"/>
         </div>
       </div>
-      <div class="row left lives">
-        <span class="black-text">
-          <h3 class="hangStyle">lives: <span id="lives" class="red-text"><i class="material-icons">favorite</i></span></h3>
-        </span>
-      </div>
-      <div class="row select-category">
+      <div class="row select-category categoryscene">
         <div class="col s12">
           <div class="card-panel red hangStyle">
             <h4>Select a category... You play with it or it plays with your life ;(</h4>
@@ -39,8 +39,27 @@
           </div>
         </div>
       </div>
+      <div class="playscene">
+        <div class="row lives">
+          <div class="col s12">
+            <div class="card-panel cyan lighten-4">
+              <h5 class="hangStyle">lives: <span id="livesHearts" class="red-text"></span></h5>
+            </div>
+          </div>
+        </div>
+        <div class="row hangplay">
+          <div class="col s12 center">
+            <div class="card-panel green accent-2">
+              <h5 class="hangStyle">guess using your keyboard</h5>
+              <h4 id="wordplay">E__MP_E</h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <audio src="assets/adventure.mp3" id="adventure music" autoplay="" loop></audio>
+
+
+    <audio src="assets/adventure.mp3" id="musiccontrol" autoplay="" loop></audio>
 
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
