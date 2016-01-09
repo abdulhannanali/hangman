@@ -49,7 +49,7 @@ In this scene a random key word is given to the user from the category he select
 After the game has end, we are also unlistening or unbinding any `keypress` events associated with keyboard, in order to keep doubling from happen.
 
 #### Final scene
-This is the final scene here I congratulate user on winning and curse him on losing. It's fairly straightforward, it's maintained under class `finalscene` in HTML and message and image is manipulated using JavaScript in [index.js](js/index.js)
+This is the final scene of the game here we congratulate user on winning and curse him on losing. It's fairly straightforward, it's maintained under class `.finalscene` in HTML and message and image is manipulated using JavaScript in [index.js](js/index.js)
 
 
 ### Purpose of doing it
