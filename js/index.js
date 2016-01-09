@@ -84,6 +84,7 @@
         lives.append($(lifeElement))
       }
     }
+    var lastLetter = ""
 
     if (!category) {
       throw new Error("Category not given")
@@ -95,7 +96,18 @@
     var splitWord = wordToFind.split("")
     var silentSplitWord = silentWord(wordToFind).split("")
     displayWord(silentSplitWord)
+
+
     listenKeyboardLetters(function (key) {
+      if (key.search(/[aeiou]/ig) != -1) {
+        showErrorMessage("You entered a vowel!")
+        return;
+      }
+      if (key == lastLetter) {
+        showErrorMessage("You can't enter the same key again")
+        return;
+      }
+      lastLetter = key
       var found = false
       silentSplitWord.forEach(function (value, index) {
         // means not currently filled
@@ -204,10 +216,25 @@
 
   function resetGame () {
     $(".lives").hide()
+    $(".errorscene").hide()
     $(".playscene").hide()
+    // $(".error")
     $(".finalscene").hide()
     unListenKeyboard()
     $(".categoryscene").show()
+  }
+
+  function showErrorMessage(message) {
+    var errorMessage = $("#errormessage")
+    var errorScene = $(".errorscene")
+    var errorTimeout = 2000
+    errorMessage.text(message)
+    errorScene.show()
+    setTimeout(function () {
+      if (errorMessage.text() == message) {
+        errorScene.hide()
+      } 
+    }, errorTimeout)
   }
 
 
