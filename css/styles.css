@@ -5,3 +5,8 @@
 .repoText {
   margin-top: 10px;
 }
+
+.toast {
+	background-color: red;
+	color: black;
+}

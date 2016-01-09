@@ -225,16 +225,17 @@
   }
 
   function showErrorMessage(message) {
-    var errorMessage = $("#errormessage")
-    var errorScene = $(".errorscene")
+    // var errorMessage = $("#errormessage")
+    // var errorScene = $(".errorscene")
     var errorTimeout = 2000
-    errorMessage.text(message)
-    errorScene.show()
-    setTimeout(function () {
-      if (errorMessage.text() == message) {
-        errorScene.hide()
-      } 
-    }, errorTimeout)
+    // errorMessage.text(message)
+    // errorScene.show()
+    // setTimeout(function () {
+    //   if (errorMessage.text() == message) {
+    //     errorScene.hide()
+    //   } 
+    // }, errorTimeout)
+    Materialize.toast(message, errorTimeout)
   }
 
 
