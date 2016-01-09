@@ -46,14 +46,14 @@ Also, this includes all the initializing of other view elements too.
 #### Play scene
 In this scene a random key word is given to the user from the category he selected, The main function that contains most of the logic for this function is `startGame(category)`. This is where computer is handling everything such as initialization of lives, number of lives, listening for the keyboard input etc.
 
+After the game has end, we are also unlistening or unbinding any `keypress` events associated with keyboard, in order to keep doubling from happen.
+
 #### Final scene
 This is the final scene here I congratulate user on winning and curse him on losing. It's fairly straightforward, it's maintained under class `finalscene` in HTML and message and image is manipulated using JavaScript in [index.js](js/index.js)
 
-##### Final words
-This is a brief overview, for more information on how the game and the code works, please make an issue, I'll be happy to help.
 
 ### Purpose of doing it
-This is done as task in [Google CodeIn](https://codein.withgoogle.com) with FOSSASIA organization. You can visit FOSSASIA [here](https://fossasia.org)
+This is done as task in [Google CodeIn](https://codein.withgoogle.com) with FOSSASIA organization. You can visit FOSSASIA [here](https://fossasia.org). FOSSASIA is an open source organization which is playing a major role in promoting open source development and culture in ASIA and all over the world. FOSSASIA has a goal of solving the major problems humanity is facing using Open Source.
 
 ### Contributions
 If you find any issue or want to add a feature, feel free to make a PR and raise an issue. It will be really awesome. :smile: :smile: :smile:
