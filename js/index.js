@@ -216,6 +216,7 @@
 
   function resetGame () {
     $(".lives").hide()
+    $(".errorscene").hide()
     $(".playscene").hide()
     // $(".error")
     $(".finalscene").hide()
