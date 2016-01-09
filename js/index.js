@@ -173,7 +173,7 @@
   }
 
   function silentWord(word) {
-    return word.replace(/[aeiou]/g, "_")
+    return word.replace(/[bcdfghjklmnpqrstvwxyz]/ig, "_")
   }
 
 
