@@ -235,7 +235,8 @@
     //     errorScene.hide()
     //   } 
     // }, errorTimeout)
-    Materialize.toast(message, errorTimeout)
+    var errorMessage = $('<span><i class="material-icons">error</i> ' + message + "</span>")
+    Materialize.toast(errorMessage, errorTimeout)
   }
 
 
