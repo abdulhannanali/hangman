@@ -57,3 +57,6 @@ This is done as task in [Google CodeIn](https://codein.withgoogle.com) with FOSS
 
 ### Contributions
 If you find any issue or want to add a feature, feel free to make a PR and raise an issue. It will be really awesome. :smile: :smile: :smile:
+
+#### LICENSE
+The code is licensed under MIT LICENSE. See [LICENSE](LICENSE)
